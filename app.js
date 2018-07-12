@@ -17,17 +17,18 @@ app.post('/', (request, response) => {
   const {
     body: {
       text,
+      command,
     },
   } = request;
 
-  const [command, ...details] = text.split(' ');
+  const [action, ...details] = text.split(' ');
 
-  switch (command) {
+  switch (action) {
     case 'surprise':
       surpriseMessage(request, response);
       break;
     case 'help':
-      helpMessage(response);
+      helpMessage(response, command);
       break;
     default: {
       Promise.all([collectionApi.getCollections(), cuisinesApi.getCuisines()])
