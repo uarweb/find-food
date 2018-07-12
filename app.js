@@ -4,12 +4,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 8080;
 
-const surpriseMessage = require('./messages/surprise.js');
 const helpMessage = require('./messages/help.js');
 const defaultMessage = require('./messages/default.js');
 
 const collectionApi = require('./api/collections.js');
 const cuisinesApi = require('./api/cuisines.js');
+const surpriseMessage = require('./api/surprise.js');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 

@@ -32,11 +32,11 @@ const surprise = (request, response) => {
           "response_type": "in_channel",
           "attachments": [
             {
-              "color": "FF0080",
               "title": restaurant.name,
               "title_link": restaurant.url,
               "text": restaurant.location.address,
-              "footer": "Chosen at Random!",
+              "footer": restaurant.user_rating.rating_text,
+              "color": restaurant.user_rating.rating_color,
               "thumb_url": restaurant.thumb,
             },
           ],
