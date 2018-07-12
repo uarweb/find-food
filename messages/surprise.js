@@ -7,6 +7,7 @@ const surprise = (request, response) => {
       const restaurant = data.restaurants[Math.floor(Math.random() * data.restaurants.length)].restaurant;
       return response.status(200)
         .send({
+          "response_type": "in_channel",
           "attachments": [
             {
               "color": "FF0080",
