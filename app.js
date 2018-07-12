@@ -1,14 +1,11 @@
 const express = require('express');
 const zomatoApi = require('./shared/zomatoApi');
-
-const router = express.Router();
+const surprise = require('./messages/surprise.js')
 
 const app = express();
 const port = 3000;
 
-router.use('/', zomatoApi);
-
-app.use(router);
+app.get('/', surprise);
 
 app.listen(port, (err) => {
   if (err) {
